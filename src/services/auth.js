@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:3000';
+
 export async function loginUser(username, password) {
   const response = await axios.post('/api/auth/login', { username, password });
-  if (response.data.success) {
+  // Acepta la respuesta si contiene token
+  if (response.data.token) {
     localStorage.setItem('token', response.data.token);
     return response.data;
   } else {
