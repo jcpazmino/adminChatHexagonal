@@ -1,6 +1,6 @@
 # Panel de Arquitectura y Omnicanalidad
 
-## 1. Arquitectura Actual del Chatbot Auxiliar de Ventas
+## 1. Arquitectura Actual del Chatbot Auxiliar de Ventas (backend que se está desarrollando)
 
 Este sistema sigue un patrón **Vertical Slice** con un enfoque modular y hexagonal:
 
@@ -39,7 +39,7 @@ Este sistema sigue un patrón **Vertical Slice** con un enfoque modular y hexago
 
 ---
 
-## 2. Arquitectura Omnicanal
+## 2. Arquitectura Omnicanal (frontend a desarrollar)
 
 La **arquitectura omnicanal** busca integrar todos los canales de comunicación y venta para ofrecer una experiencia fluida y consistente al cliente:
 
@@ -84,7 +84,7 @@ Integrar el chatbot y módulos backend con otros canales para permitir que el cl
 ## 4. Siguientes pasos para un panel de administración omnicanal
 
 Si se añade un **frontend Vue de administración**:
-- Crear `/apps/admin-vue` con módulos reflejando los del backend (inventory, orders, customers, payments, chatbot, rag-admin).
+- Crear un panel administrador con módulos reflejando los del backend (inventory, orders, customers, payments, chatbot, rag-admin).
 - Incluir **módulo omnicanal** para ver actividad y KPIs por canal.
 - Añadir métricas: tasa de conversión por canal, tiempo de respuesta, % pedidos mixtos.
 - Incorporar gestión de contenidos/mensajes multicanal (plantillas para WhatsApp, email, webchat).
