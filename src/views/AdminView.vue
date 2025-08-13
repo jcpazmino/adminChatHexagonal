@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <MetricsDashboard />
-    <ConversationList />
-  </div>
+  <Dashboard />
 </template>
 <script>
-import MetricsDashboard from '../components/MetricsDashboard.vue';
-import ConversationList from '../components/ConversationList.vue';
+import Dashboard from '../components/Dashboard.vue';
 export default {
   name: 'AdminView',
-  components: { MetricsDashboard, ConversationList }
+  components: { Dashboard }
 }
 </script>

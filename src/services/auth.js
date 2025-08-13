@@ -7,6 +7,20 @@ export async function loginUser(username, password) {
   // Acepta la respuesta si contiene token
   if (response.data.token) {
     localStorage.setItem('token', response.data.token);
+    // Guardar información adicional del usuario, excluyendo campos no deseados
+    const user = response.data.user;
+    if (user) {
+      const userToStore = {
+        user_id: user.user_id,
+        username: user.username,
+        email: user.email,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        phone: user.phone,
+        rol: response.data.rol // si está fuera del objeto user
+      };
+      localStorage.setItem('user', JSON.stringify(userToStore));
+    }
     return response.data;
   } else {
     throw new Error(response.data.message || 'Error de autenticación');
@@ -23,5 +37,5 @@ export async function getCurrentUser() {
 
 export async function logoutUser() {
   localStorage.removeItem('token');
-  await axios.post('/api/auth/logout');
+  localStorage.removeItem('user');
 }
